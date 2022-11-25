@@ -1,6 +1,7 @@
 name: Build a TiddlyWiki static site and deploy to fission
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -11,9 +12,10 @@ on:
 jobs:
 # TODO: figure out TW static generation
   fission:
-    runs-on: ubuntu-latest # can change this to ubuntu-latest if you prefer
+    name: 🚀 Publish to Fission
+    runs-on: ubuntu-latest
     steps:
       - name: 🚀 fission publish
         uses: fission-suite/publish-action@v1
         with:
-            machine_key: ${{ secrets.FISSION_KEY }}
+          machine_key: ${{ secrets.FISSION_KEY }}
