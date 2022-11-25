@@ -1,3 +1,0 @@
-ignore: [".DS_Store"]
-url: twgroceries.fission.app
-build: static/
