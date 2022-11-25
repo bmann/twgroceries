@@ -21,6 +21,7 @@ jobs:
 
       - name: Build Static Pages 🛠
         run: | 
+             chmod +x $GITHUB_WORKSPACE/build.sh
              ./build.sh
 
       - name: add a nojekyll file 🚫
@@ -31,7 +32,7 @@ jobs:
         with:
           branch: gh-pages
           folder: static 
-          # clean: true
+          clean: true
 
 #    - name: 🚀 Publish to Fission
 #        uses: fission-suite/publish-action@v1
