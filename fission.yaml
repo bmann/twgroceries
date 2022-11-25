@@ -1,0 +1,3 @@
+ignore: ["README.md", ".gitignore", ".DS_Store"]
+url: twgroceries.fission.app
+build: .
