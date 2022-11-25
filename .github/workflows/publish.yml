@@ -18,4 +18,4 @@ jobs:
       - name: 🚀 fission publish
         uses: fission-suite/publish-action@v1
         with:
-          machine_key: ${{ secrets.FISSION_KEY }}
+          machine_key: ${{ secrets.MACHINE_KEY }}
