@@ -19,7 +19,7 @@
 			"--rendertiddler","$:/core/save/all","externalimages.html","text/plain"],
 		"static": [
 			"--rendertiddler","$:/core/templates/static.template.html","index.html","text/plain",
-			"--rendertiddlers","[!is[system]]","$:/core/templates/static.tiddler.html","static","text/plain",
+			"--rendertiddlers","[!is[system]]","$:/core/templates/static.tiddler.html","./","text/plain",
 			"--rendertiddler","$:/core/templates/static.template.css","static/static.css","text/plain"]
 	}
 }
