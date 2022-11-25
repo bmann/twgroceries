@@ -15,7 +15,18 @@ jobs:
     name: 🚀 Publish to Fission
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repo   
+        uses: actions/checkout@v2
+        
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.5.1
+
+      - name: Build
+        run: |
+            ./build.sh
+
       - name: 🚀 fission publish
         uses: fission-suite/publish-action@v1
         with:
           machine_key: ${{ secrets.FISSION_MACHINE_KEY }}
+          build_dir: ./static
