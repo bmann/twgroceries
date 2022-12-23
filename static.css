@@ -382,9 +382,7 @@ html button {
 	color: ;
 	fill: ;
 	background: ;
-	border: 1px solid ;
-	border-radius: 3px;
-	padding: 2px 5px;
+	border-color: ;
 }button:disabled svg {
 	fill: #999999;
 }/*
@@ -478,21 +476,13 @@ html button {
 }dl dt {
 	font-weight: bold;
 	margin-top: 6px;
-}/*
-** Definition for text input elements so they look consistent for all browsers
-*/textarea, input, select {
-	border: 2px solid rgba(0,0,0,.2);
-	background-color: #ffffff;
-}/* Input elements accessibility -- overwrite the reset */
-:focus-visible {
-	outline: 2px solid #7f4bca;
-	outline-offset: -2px;    /* same as in reset.css [type='search'] but for more elements */
 }textarea,
 input[type=text],
 input[type=search],
 input[type=""],
 input:not([type]) {
 	color: #3F3B3B;
+	background: #ffffff;
 }input[type="checkbox"] {
 	vertical-align: middle;
 }input[type="search"]::-webkit-search-decoration,
@@ -550,7 +540,7 @@ Table defaults
 	border-collapse: collapse;
 	border-spacing: 0;
 }table th, table td {
-	padding: 4px 6px 4px 6px;
+	padding: 0 7px 0 7px;
 	border-top: 1px solid #dddddd;
 	border-left: 1px solid #dddddd;
 }table thead tr td, table th {
