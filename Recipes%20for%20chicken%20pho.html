@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.2" />
+<meta name="tiddlywiki-version" content="5.3.3" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -21,7 +21,6 @@
 &lt;/$list&gt;</code></pre><p>Might be better as a View template? Certainly for "tags" or meta-types, like <a class="tc-tiddlylink tc-tiddlylink-resolves" href="chicken%2520pho.html">chicken pho</a> or <a class="tc-tiddlylink tc-tiddlylink-resolves" href="cream.html">cream</a>. What's the right name for these items? "base"? except that's sort of a cooking term already. Going for <code>generic</code> for now, which...somehow isn't great either.</p><p>I added <a class="tc-tiddlylink tc-tiddlylink-missing" href="Article.html">Article</a> as a thing, as well as <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Cookbook.html">Cookbook</a> and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Magazine.html">Magazine</a>. <code>page</code> is a field, and <code>cookbook</code> as the general "source" for things. For one-off recipes, it's more useful to use the universal <code>uri</code> field.</p><p>Steven is <a class="tc-tiddlylink-external" href="https://talk.fission.codes/t/ingredient-recipe-manager/1812" rel="noopener noreferrer" target="_blank">working on an Ingredient &amp; Recipe Manager app</a> which got me thinking about "local" and "in season". I added <code>region</code> to a couple of things which are definitely local.</p><p>Worked on within field a little more. Here’s the filter snippet for <a class="tc-tiddlylink tc-tiddlylink-resolves" href="British%2520Columbia.html">British Columbia</a>:</p><pre><code>&lt;$list filter="[contains:within[British Columbia]]"&gt;
 &lt;li&gt;&lt;$link&gt;{{!!title}}&lt;/$link&gt; {{!!notes}}&lt;/li&gt;
 &lt;/$list&gt;</code></pre></div>
-
 </div></p>
 </section>
 </body>
