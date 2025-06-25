@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.3.3" />
+<meta name="tiddlywiki-version" content="5.3.6" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -89,7 +89,7 @@ Error message and password prompt
 <style type="text/css">
 /*
 ** Start with the normalize CSS reset, and then belay some of its effects
-*//*! modern-normalize v1.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+*//*! modern-normalize v2.0.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /*
 Document
@@ -101,28 +101,26 @@ Use a better box model (opinionated).
 */
 
 *,
-*::before,
-*::after {
-  box-sizing: border-box;
+::before,
+::after {
+	box-sizing: border-box;
 }
-
-/**
-Use a more readable tab size (opinionated).
-*/
-
-:root {
-  -moz-tab-size: 4;
-  tab-size: 4;
-}
-
-/**
-1. Correct the line height in all browsers.
-2. Prevent adjustments of font size after orientation changes in iOS.
-*/
 
 html {
-  line-height: 1.15; /* 1 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+	/* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
+	font-family:
+		system-ui,
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji';
+	line-height: 1.15; /* 1. Correct the line height in all browsers. */
+	-webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
+	-moz-tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
+	tab-size: 4; /* 3 */
 }
 
 /*
@@ -130,29 +128,8 @@ Sections
 ========
 */
 
-/**
-Remove the margin in all browsers.
-*/
-
 body {
-  margin: 0;
-}
-
-/**
-Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
-*/
-
-body {
-  font-family:
-    system-ui,
-    -apple-system, /* Firefox supports this but not yet `system-ui` */
-    'Segoe UI',
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif,
-    'Apple Color Emoji',
-    'Segoe UI Emoji';
+	margin: 0; /* Remove the margin in all browsers. */
 }
 
 /*
@@ -166,8 +143,8 @@ Grouping content
 */
 
 hr {
-  height: 0; /* 1 */
-  color: inherit; /* 2 */
+	height: 0; /* 1 */
+	color: inherit; /* 2 */
 }
 
 /*
@@ -180,7 +157,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 */
 
 abbr[title] {
-  text-decoration: underline dotted;
+	text-decoration: underline dotted;
 }
 
 /**
@@ -189,7 +166,7 @@ Add the correct font weight in Edge and Safari.
 
 b,
 strong {
-  font-weight: bolder;
+	font-weight: bolder;
 }
 
 /**
@@ -201,14 +178,14 @@ code,
 kbd,
 samp,
 pre {
-  font-family:
-    ui-monospace,
-    SFMono-Regular,
-    Consolas,
-    'Liberation Mono',
-    Menlo,
-    monospace; /* 1 */
-  font-size: 1em; /* 2 */
+	font-family:
+		ui-monospace,
+		SFMono-Regular,
+		Consolas,
+		'Liberation Mono',
+		Menlo,
+		monospace; /* 1 */
+	font-size: 1em; /* 2 */
 }
 
 /**
@@ -216,7 +193,7 @@ Add the correct font size in all browsers.
 */
 
 small {
-  font-size: 80%;
+	font-size: 80%;
 }
 
 /**
@@ -225,18 +202,18 @@ Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
 
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
 }
 
 sub {
-  bottom: -0.25em;
+	bottom: -0.25em;
 }
 
 sup {
-  top: -0.5em;
+	top: -0.5em;
 }
 
 /*
@@ -246,12 +223,12 @@ Tabular data
 
 /**
 1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
-2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+2. Correct table border color inheritance in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
 */
 
 table {
-  text-indent: 0; /* 1 */
-  border-color: inherit; /* 2 */
+	text-indent: 0; /* 1 */
+	border-color: inherit; /* 2 */
 }
 
 /*
@@ -269,20 +246,19 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
+	font-family: inherit; /* 1 */
+	font-size: 100%; /* 1 */
+	line-height: 1.15; /* 1 */
+	margin: 0; /* 2 */
 }
 
 /**
 Remove the inheritance of text transform in Edge and Firefox.
-1. Remove the inheritance of text transform in Firefox.
 */
 
 button,
-select { /* 1 */
-  text-transform: none;
+select {
+	text-transform: none;
 }
 
 /**
@@ -293,7 +269,7 @@ button,
 [type='button'],
 [type='reset'],
 [type='submit'] {
-  -webkit-appearance: button;
+	-webkit-appearance: button;
 }
 
 /**
@@ -301,8 +277,8 @@ Remove the inner border and padding in Firefox.
 */
 
 ::-moz-focus-inner {
-  border-style: none;
-  padding: 0;
+	border-style: none;
+	padding: 0;
 }
 
 /**
@@ -310,7 +286,7 @@ Restore the focus styles unset by the previous rule.
 */
 
 :-moz-focusring {
-  outline: 1px dotted ButtonText;
+	outline: 1px dotted ButtonText;
 }
 
 /**
@@ -319,7 +295,7 @@ See: https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d4
 */
 
 :-moz-ui-invalid {
-  box-shadow: none;
+	box-shadow: none;
 }
 
 /**
@@ -327,7 +303,7 @@ Remove the padding so developers are not caught out when they zero out 'fieldset
 */
 
 legend {
-  padding: 0;
+	padding: 0;
 }
 
 /**
@@ -335,7 +311,7 @@ Add the correct vertical alignment in Chrome and Firefox.
 */
 
 progress {
-  vertical-align: baseline;
+	vertical-align: baseline;
 }
 
 /**
@@ -344,7 +320,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 
 ::-webkit-inner-spin-button,
 ::-webkit-outer-spin-button {
-  height: auto;
+	height: auto;
 }
 
 /**
@@ -353,8 +329,8 @@ Correct the cursor style of increment and decrement buttons in Safari.
 */
 
 [type='search'] {
-  -webkit-appearance: textfield; /* 1 */
-  outline-offset: -2px; /* 2 */
+	-webkit-appearance: textfield; /* 1 */
+	outline-offset: -2px; /* 2 */
 }
 
 /**
@@ -362,7 +338,7 @@ Remove the inner padding in Chrome and Safari on macOS.
 */
 
 ::-webkit-search-decoration {
-  -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 
 /**
@@ -371,8 +347,8 @@ Remove the inner padding in Chrome and Safari on macOS.
 */
 
 ::-webkit-file-upload-button {
-  -webkit-appearance: button; /* 1 */
-  font: inherit; /* 2 */
+	-webkit-appearance: button; /* 1 */
+	font: inherit; /* 2 */
 }
 
 /*
@@ -385,12 +361,18 @@ Add the correct display in Chrome and Safari.
 */
 
 summary {
-  display: list-item;
+	display: list-item;
 }
-*, input[type="search"] {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
+input[type="search"] {
+	outline-offset: initial;
+}button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+	outline: 2px solid #7f4bca;
+	outline-offset: -2px;
+	border-radius: 0.25em;
+}button:-moz-focusring, input:-moz-focusring, textarea:-moz-focusring, select:-moz-focusring {
+	outline: 2px solid #7f4bca;
+	outline-offset: -2px;
+	border-radius: 0.25em;
 }/*
 ** Button default styles. Makes them look consistent for all browsers
 */
@@ -405,7 +387,7 @@ html button {
 }/*
 ** Basic element styles
 */html, body {
-	font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 	text-rendering: optimizeLegibility; /* Enables kerning and ligatures etc. */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -440,7 +422,7 @@ html button {
 	border: 1px solid #cccccc;
 	padding: 0 3px 2px;
 	border-radius: 3px;
-	font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+	font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 }code {
 	color: #dd1144;
 	background-color: #f7f7f9;
@@ -448,7 +430,7 @@ html button {
 	white-space: pre-wrap;
 	padding: 0 3px 2px;
 	border-radius: 3px;
-	font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
+	font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 }blockquote {
 	border-left: 5px solid #999999;
 	margin-left: 25px;
@@ -496,6 +478,11 @@ html button {
 }textarea,
 input[type=text],
 input[type=search],
+input[type=number],
+input[type=password],
+input[type=email],
+input[type=tel],
+input[type=url],
 input[type=""],
 input:not([type]) {
 	color: #3F3B3B;
@@ -534,16 +521,22 @@ input[type="search"]::-webkit-search-results-decoration {
 }.tc-inline-style {
 	background: #ffff00;
 	color: #000000;
+}/* Markdown uses mark element to highlight */mark {
+	background: #ffff00;
+	color: #000000;
 }form.tc-form-inline {
 	display: inline;
 }/*
 Markdown likes putting code elements inside pre elements
 */
 pre > code {
-	padding: 0;
+	display: block;
+	padding: 0.5em;
 	border: none;
+	white-space: pre-wrap;
 	background-color: inherit;
 	color: inherit;
+	overflow-x: auto;
 }/*
 Table defaults
 */table {
@@ -944,6 +937,7 @@ a.tc-tiddlylink:hover {
 	vertical-align: middle;
 }.tc-page-controls {
 	margin-top: 14px;
+	margin-bottom: 14px;
 	font-size: 1.5em;
 }.tc-page-controls .tc-drop-down {
 	font-size: 1rem;
@@ -970,9 +964,7 @@ a.tc-tiddlylink:hover {
 		min-height: 32px;
 		margin-top: 0px;
 		transition:  min-height 400ms ease-in-out, padding-top 400ms ease-in-out, padding-bottom 400ms ease-in-out;
-	}
-	
-	.tc-story-river {
+	}.tc-story-river {
 		position: relative;
 		padding: 0;
 	}
@@ -1078,6 +1070,16 @@ a.tc-tiddlylink:hover {
 	height: 0.9em;
 }.tc-system-title-prefix {
 	color: #999999;
+}.tc-tiddler-lazy-loading {
+	height: 4px;
+	width: 100%;
+	background: no-repeat linear-gradient(#ffffff 0 0),no-repeat linear-gradient(#ffffff 0 0),#7f4bca;
+	background-size: 60% 100%;
+	animation: animation-loading-progress 3s infinite;
+}@keyframes animation-loading-progress {
+	0%   {background-position:-150% 0,-150% 0}
+	66%  {background-position: 250% 0,-150% 0}
+	100% {background-position: 250% 0, 250% 0}
 }.tc-titlebar h2 {
 	font-size: 1em;
 	display: inline;
@@ -1173,14 +1175,16 @@ a.tc-tiddlylink:hover {
 	display: block;
 }.tc-edit-bitmapeditor-height {
 	display: block;
-}.tc-tiddler-body {
-	clear: both;
-}.tc-tiddler-frame .tc-tiddler-body {
+}.tc-single-tiddler-window .tc-tiddler-body,
+.tc-tiddler-frame .tc-tiddler-body {
 	font-size: 15px;
 	line-height: 22px;
 }.tc-titlebar, .tc-tiddler-edit-title {
-	overflow: hidden; /* https://github.com/Jermolene/TiddlyWiki5/issues/282 */
-}html body.tc-body.tc-single-tiddler-window {
+	overflow: hidden; /* https://github.com/TiddlyWiki/TiddlyWiki5/issues/282 */
+}/*
+* Tiddler in a new window.
+* Also see: .tc-single-tiddler-window .tc-tiddler-body, above
+*/html body.tc-body.tc-single-tiddler-window {
 	margin: 1em;
 	background: #ffffff;
 }.tc-single-tiddler-window img,
@@ -1288,15 +1292,13 @@ a.tc-tiddlylink:hover {
 	margin: 14px 0 14px 0;
 }.tc-remove-tag-button {
 	padding-left: 4px;
-}.tc-tiddler-preview {
-	overflow: auto;
 }.tc-tiddler-editor {
 	display: grid;
 }.tc-tiddler-frame .tc-tiddler-editor.tc-tiddler-preview {
 	grid-template-areas:
 		"toolbar toolbar"
 		"editor preview";
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(2, minmax(0px, 1fr));
 	grid-template-rows: auto 1fr;
 }.tc-tiddler-frame .tc-tiddler-editor.tc-tiddler-preview-hidden {
 	grid-template-areas:
@@ -1733,11 +1735,7 @@ a.tc-tiddlylink:hover {
 	border: none;
 }/*
 ** Manager
-*/.tc-manager-wrapper {
-	
-}.tc-manager-controls {
-	
-}.tc-manager-control {
+*/.tc-manager-wrapper {}.tc-manager-controls {}.tc-manager-control {
 	margin: 0.5em 0;
 }.tc-manager-control select {
 	max-width: 100%;
@@ -1887,6 +1885,8 @@ a.tc-tiddlylink:hover {
 	padding: 4px;
 }.tc-control-panel table, .tc-control-panel table input, .tc-control-panel table textarea {
 	width: 100%;
+}.tc-control-panel-setting {
+	border-top: 1px solid #999999;
 }.tc-plugin-info {
 	display: flex;
 	text-shadow: none;
@@ -1925,6 +1925,9 @@ a.tc-tiddlylink:hover {
 	fill: #3F3B3B;
 }a.tc-tiddlylink.tc-plugin-info:hover > .tc-plugin-info-chunk > svg {
 	fill: #ffffff;
+}a.tc-tiddlylink.tc-plugin-info:hover > .tc-plugin-info-chunk .tc-plugin-info-stability {
+	border: 1px solid #ffffff;
+	color: #ffffff;
 }.tc-plugin-info-chunk {
 	margin: 2px;
 }.tc-plugin-info-chunk.tc-plugin-info-toggle {
@@ -1935,8 +1938,29 @@ a.tc-tiddlylink:hover {
 	flex-grow: 0;
 	flex-shrink: 0;
 	line-height: 1;
+	height: 2em;
+	width: 2em;
+	display: grid;
 }.tc-plugin-info-chunk.tc-plugin-info-description {
 	flex-grow: 1;
+}.tc-plugin-info-chunk .tc-plugin-info-stability {
+	margin-right: 4px;
+	padding: 1px 3px;
+	font-size: 0.8em;
+	border-radius: 4px;
+	font-weight: bold;
+}.tc-plugin-info-chunk .tc-plugin-info-stability-stable {
+	border: 1px solid #008000;
+	color: #008000;
+}.tc-plugin-info-chunk .tc-plugin-info-stability-experimental {
+	border: 1px solid #c07c00;
+	color: #c07c00;
+}.tc-plugin-info-chunk .tc-plugin-info-stability-deprecated {
+	border: 1px solid #ff0000;
+	color: #ff0000;
+}.tc-plugin-info-chunk .tc-plugin-info-stability-legacy {
+	border: 1px solid #0000ff;
+	color: #0000ff;
 }.tc-plugin-info-chunk.tc-plugin-info-buttons {
 	font-size: 0.8em;
 	line-height: 1.2;
@@ -1952,15 +1976,16 @@ a.tc-tiddlylink:hover {
 	line-height: 1.2;
 	margin: 2px 0 2px 0;
 }.tc-plugin-info-chunk.tc-plugin-info-description div {
-	font-size: 0.7em;
+	font-size: 0.8em;
 	line-height: 1.2;
 	margin: 2px 0 2px 0;
 }.tc-plugin-info-chunk.tc-plugin-info-toggle img, .tc-plugin-info-chunk.tc-plugin-info-toggle svg {
 	width: 1em;
 	height: 1em;
 }.tc-plugin-info-chunk.tc-plugin-info-icon img, .tc-plugin-info-chunk.tc-plugin-info-icon svg {
-	width: 2em;
-	height: 2em;
+	max-width: 2em;
+	max-height: 2em;
+	margin: auto;
 }.tc-plugin-info-dropdown {
 	border: 1px solid #999999;
 	background: #ffffff;
@@ -2017,6 +2042,17 @@ a.tc-tiddlylink:hover {
 ** Floats
 */.tc-float-right {
 	float: right;
+}/* Float tc-clearfix. Needs to be used by elements that allow float:right in their content.
+** So the floating element does not overflow
+*/.tc-clearfix:after {
+	content: "";
+	clear: both;
+	display: table;
+}/* Fix overflow toc, manager and testcase output */
+.tc-tiddler-body .tc-tabbed-table-of-contents, .tc-manager-list-item-content, .tc-test-case-output {
+	overflow-x: auto;
+}/* A wrapper to fix table overflow */.tc-table-wrapper {
+	overflow-x: auto;
 }/*
 ** Chooser
 */.tc-chooser {
@@ -2049,11 +2085,14 @@ a.tc-tiddlylink:hover {
 	content: "» ";
 }.tc-chooser-item svg,
 .tc-chooser-item img{
-	width: 1em;
-	height: 1em;
+	max-width: 1em;
+	max-height: 1em;
 	vertical-align: middle;
 }.tc-language-chooser .tc-image-button img {
-	width: 2em;
+	max-width: 2em;
+	max-height: 1em;
+	width: auto;
+	height: auto;
 	vertical-align: -0.15em;
 }/*
 ** Palette swatches
@@ -2217,17 +2256,17 @@ a.tc-tiddlylink:hover {
 	width: 3em;
 	height: 3em;
 	
-  -webkit-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
-     -moz-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
-          filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+-webkit-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+	-moz-filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+		filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
 
 }.tc-thumbnail-wrapper:hover .tc-thumbnail-icon svg,
 .tc-thumbnail-wrapper:hover .tc-thumbnail-icon img {
 	fill: #fff;
 	
-  -webkit-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
-     -moz-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
-          filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
+-webkit-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
+	-moz-filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
+		filter: drop-shadow(3px 3px 4px rgba(0,0,0,0.6));
 
 }.tc-thumbnail-icon {
 	position: absolute;
@@ -2347,6 +2386,108 @@ a.tc-tiddlylink:hover {
 }.tc-network-activity-background {
 	fill: #448844;
 }/*
+** Test Cases
+*/.tc-test-case-wrapper {
+	border: 1px solid #3F3B3B;
+	background-color: #999999;
+	border-radius: 6px;
+}.tc-test-case-wrapper {
+	background-color: #c1eaff;
+}.tc-test-case-wrapper .tc-test-case-wrapper {
+	background-color: #E3B740;
+}.tc-test-case-wrapper .tc-test-case-wrapper .tc-test-case-wrapper {
+	background-color: #5FD564;
+}.tc-test-case-header {
+	font-weight: normal;
+	margin: 0.5em 0;
+	padding: 0 0.5em;
+}.tc-test-case-divider {
+	x-background-color: #999999;
+}.tc-test-case-result-icon {
+	fill: #fff;
+	padding: 0.25em;
+	display: inline-block;
+	line-height: 0;
+	border-radius: 1em;
+	vertical-align: text-bottom;
+	margin-right: 0.25em;
+}.tc-test-case-result-icon-pass {
+	background-color: green;
+}.tc-test-case-result-icon-fail {
+	background-color: red;
+}.tc-test-case-result-icon svg {
+	width: 0.5em;
+	height: 0.5em;
+}.tc-test-case-header > h2 {
+	background: #ffffff;
+	border-radius: 4px;
+	padding: 0.25em;
+}.tc-test-case-header > h2,
+.tc-test-case-source > pre {
+	margin: 0;
+}.tc-test-case-header > h2 a.tc-tiddlylink-missing {
+	font-style: normal;
+}.tc-test-case-toolbar {
+	float: right;
+}.tc-test-case-toolbar svg {
+	fill: #cccccc;
+}.tc-test-case-toolbar .tc-drop-down {
+	font-size: 0.8em;
+}.tc-test-case-result-fail {
+	border: 1px solid #3F3B3B;
+	background-color: #ffffff;
+	border-radius: 4px;
+	margin: 0 0.5em;
+	padding: 0;
+}.tc-test-case-result-fail-header {
+	background: #ffc9c9;
+	color: #3F3B3B;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	padding: 4px;
+}.tc-test-case-result-fail-body {
+	padding: 4px;
+}.tc-test-case-source > pre {
+	height: 100%;
+}.tc-test-case-narrative {
+	padding: 0.5em;
+}.tc-test-case-panes {
+	display: flex;
+	align-items: stretch;
+	flex-wrap: wrap;
+	padding: 0.5em;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
+}.tc-test-case-source {
+	flex: 1 0 49%;
+	min-width: 250px;
+}.tc-test-case-source .tc-tab-content {
+	background: inherit;
+	margin: 0;
+}.tc-test-case-source .tc-tab-content .tc-field-table {
+	background: #ffffff;
+}.tc-test-case-source .tc-field-table {
+	width: 100%;
+}.tc-test-case-source table.tc-field-table {
+	margin: 0;
+}.tc-test-case-source .tc-tiddler-frame .tc-edit-texteditor {
+	margin: 0;
+}.tc-test-case-divider {
+	flex: 0 0 1.5%;
+}.tc-test-case-source .tc-tab-buttons {
+	padding-top: 0;
+}.tc-test-case-footer-toolbar {
+	display: flex;
+	justify-content: flex-end;
+}.tc-test-case-output {
+	box-shadow: inset 2px 2px 10px 0px #999999;
+	background: #ffffff;
+	border-radius: 4px;
+	border: 1px solid #999999;
+	flex: 1 0 49%;
+	min-width: 250px;
+	padding: 0.25em 1em;
+}/*
 ** Flexbox utility classes
 */.tc-flex {
 	display: -webkit-flex;
@@ -2386,8 +2527,7 @@ a.tc-tiddlylink:hover {
 	word-break: break-all;
 }/* Vertical gaps */.tc-tiny-v-gap-bottom {
 	margin-bottom: 3px;
-}
-/* The \rules pragma at the top of the tiddler restricts the WikiText 
+}/* The \rules pragma at the top of the tiddler restricts the WikiText 
  * to just allow macros and transclusion. This avoids mistakenly 
  * triggering unwanted WikiText processing.
  * 
@@ -2440,7 +2580,7 @@ a.tc-tiddlylink:hover {
 	margin-left: 0.25em;
 }
 .markdown a.footnote-ref:target, .markdown .footnote-item:target {
-	background-color: #e6f5e8;
+	background-color: #ecf2ff;
 	scroll-margin-top: 60px;
 }
 .markdown li > p:first-child {
@@ -2866,11 +3006,23 @@ float:right;
 </head>
 <body class="tc-body">
 
-<div class="tc-page-container tc-page-view-classic tc-language-en-GB"><div class="tc-dropzone tc-page-container-inner"><span class="tc-topbar tc-topbar-left"></span><span class="tc-topbar tc-topbar-right"></span><section class="tc-story-river" role="main"><section class="story-backdrop"></section><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="FoodWiki" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-expanded="false" aria-label="info" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Finfo" title="Show information for this tiddler"><svg class="tc-image-info-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd" transform="translate(.05)"><path d="M64 128c35.346 0 64-28.654 64-64 0-35.346-28.654-64-64-64C28.654 0 0 28.654 0 64c0 35.346 28.654 64 64 64zm0-16c26.51 0 48-21.49 48-48S90.51 16 64 16 16 37.49 16 64s21.49 48 48 48z"></path><circle cx="64" cy="32" r="8"></circle><rect height="56" rx="8" width="16" x="56" y="48"></rect></g></svg></button></span><span class=" tc-reveal" hidden="true"></span><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"><svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M95.627 10.059l-5.656 5.657 11.313 11.313 5.657-5.656-11.314-11.314zm5.657-5.657l1.966-1.966c3.123-3.122 8.194-3.129 11.319-.005 3.117 3.118 3.122 8.192-.005 11.32l-1.966 1.965-11.314-11.314zm-16.97 16.97l-60.25 60.25a8.12 8.12 0 00-.322.342c-.1.087-.198.179-.295.275-5.735 5.735-10.702 22.016-10.702 22.016s16.405-5.09 22.016-10.702c.095-.096.186-.193.272-.292a8.12 8.12 0 00.345-.325l60.25-60.25-11.314-11.313zM35.171 124.19c6.788-.577 13.898-2.272 23.689-5.348 1.825-.573 3.57-1.136 6.336-2.04 16-5.226 21.877-6.807 28.745-7.146 8.358-.413 13.854 2.13 17.58 8.699a4 4 0 006.959-3.946c-5.334-9.406-13.745-13.296-24.933-12.744-7.875.39-14.057 2.052-30.835 7.533-2.739.894-4.46 1.45-6.25 2.012-19.46 6.112-30.77 7.072-39.597 1.747a4 4 0 10-4.132 6.85c6.333 3.82 13.754 5.12 22.438 4.383z"></path></g></svg></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"><svg class="tc-image-permalink-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M80.483 48l-7.387 32h-25.58l7.388-32h25.58zm3.694-16l5.624-24.358c.993-4.303 5.29-6.996 9.596-6.002 4.296.992 6.988 5.293 5.994 9.602L100.598 32h3.403c4.41 0 7.999 3.582 7.999 8 0 4.41-3.581 8-8 8h-7.096l-7.387 32H104c4.41 0 7.999 3.582 7.999 8 0 4.41-3.581 8-8 8H85.824l-5.624 24.358c-.993 4.303-5.29 6.996-9.596 6.002-4.296-.992-6.988-5.293-5.994-9.602L69.402 96h-25.58L38.2 120.358c-.993 4.303-5.29 6.996-9.596 6.002-4.296-.992-6.988-5.293-5.994-9.602L27.402 96h-3.403C19.59 96 16 92.418 16 88c0-4.41 3.581-8 8-8h7.096l7.387-32H24C19.59 48 16 44.418 16 40c0-4.41 3.581-8 8-8h18.177l5.624-24.358c.993-4.303 5.29-6.996 9.596-6.002 4.296.992 6.988 5.293 5.994 9.602L58.598 32h25.58z" fill-rule="evenodd"></path></svg></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button></span><span><h2 class="tc-title">FoodWiki</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div>
+<div class="tc-page-container tc-page-view-classic tc-language-en-GB"><div class="tc-dropzone tc-page-container-inner"><span class="tc-topbar tc-topbar-left"></span><span class="tc-topbar tc-topbar-right"></span><section class="tc-story-river" role="main"><section class="story-backdrop"></section><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists " data-tags="" data-tiddler-title="FoodWiki" role="article"><div class="tc-tiddler-title tc-clearfix"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-expanded="false" aria-label="info" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Finfo" title="Show information for this tiddler"><svg class="tc-image-info-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd" transform="translate(.05)"><path d="M64 128c35.346 0 64-28.654 64-64 0-35.346-28.654-64-64-64C28.654 0 0 28.654 0 64c0 35.346 28.654 64 64 64zm0-16c26.51 0 48-21.49 48-48S90.51 16 64 16 16 37.49 16 64s21.49 48 48 48z"></path><circle cx="64" cy="32" r="8"></circle><rect height="56" rx="8" width="16" x="56" y="48"></rect></g></svg></button></span><span class=" tc-reveal" hidden="true"></span><button aria-label="Edit this tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"><svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M95.627 10.059l-5.656 5.657 11.313 11.313 5.657-5.656-11.314-11.314zm5.657-5.657l1.966-1.966c3.123-3.122 8.194-3.129 11.319-.005 3.117 3.118 3.122 8.192-.005 11.32l-1.966 1.965-11.314-11.314zm-16.97 16.97l-60.25 60.25a8.12 8.12 0 00-.322.342c-.1.087-.198.179-.295.275-5.735 5.735-10.702 22.016-10.702 22.016s16.405-5.09 22.016-10.702c.095-.096.186-.193.272-.292a8.12 8.12 0 00.345-.325l60.25-60.25-11.314-11.313zM35.171 124.19c6.788-.577 13.898-2.272 23.689-5.348 1.825-.573 3.57-1.136 6.336-2.04 16-5.226 21.877-6.807 28.745-7.146 8.358-.413 13.854 2.13 17.58 8.699a4 4 0 006.959-3.946c-5.334-9.406-13.745-13.296-24.933-12.744-7.875.39-14.057 2.052-30.835 7.533-2.739.894-4.46 1.45-6.25 2.012-19.46 6.112-30.77 7.072-39.597 1.747a4 4 0 10-4.132 6.85c6.333 3.82 13.754 5.12 22.438 4.383z"></path></g></svg></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"><svg class="tc-image-permalink-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M80.483 48l-7.387 32h-25.58l7.388-32h25.58zm3.694-16l5.624-24.358c.993-4.303 5.29-6.996 9.596-6.002 4.296.992 6.988 5.293 5.994 9.602L100.598 32h3.403c4.41 0 7.999 3.582 7.999 8 0 4.41-3.581 8-8 8h-7.096l-7.387 32H104c4.41 0 7.999 3.582 7.999 8 0 4.41-3.581 8-8 8H85.824l-5.624 24.358c-.993 4.303-5.29 6.996-9.596 6.002-4.296-.992-6.988-5.293-5.994-9.602L69.402 96h-25.58L38.2 120.358c-.993 4.303-5.29 6.996-9.596 6.002-4.296-.992-6.988-5.293-5.994-9.602L27.402 96h-3.403C19.59 96 16 92.418 16 88c0-4.41 3.581-8 8-8h7.096l7.387-32H24C19.59 48 16 44.418 16 40c0-4.41 3.581-8 8-8h18.177l5.624-24.358c.993-4.303 5.29-6.996 9.596-6.002 4.296.992 6.988 5.293 5.994 9.602L58.598 32h25.58z" fill-rule="evenodd"></path></svg></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button></span><span><h2 class="tc-title">FoodWiki</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div>
 <div style="padding:5px 0px 7px 20px;">aka About, TWGroceries</div>
-<div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Boris%2520Mann.html">Boris Mann</a> 28th January 2023 at 11:27pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-reveal"><p>A ShoppingList, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Pantry.html">Pantry</a> and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Freezer.html">Freezer</a> tracker.</p><p>Many grocery / ingredient / food Items.</p><p>Info about <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Stores.html">Stores</a> and locations.</p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Recipe%2520List.html">Recipe List</a> and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Cookbook.html">Cookbook</a> info, and individual items and ingredients. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Bookmarks.html">Bookmarks</a> of mostly food related content.</p><p>Browse the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Custom%2520Index%2520Pages.html">Custom Index Pages</a> »</p></div>
+<div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Boris%2520Mann.html">Boris Mann</a>28th January 2023 at 11:27pm</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"></div></div><div class="tc-tiddler-body tc-reveal"><p>A ShoppingList, <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Pantry.html">Pantry</a> and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Freezer.html">Freezer</a> tracker.</p><p>Many grocery / ingredient / food Items.</p><p>Info about <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Stores.html">Stores</a> and locations.</p><p><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Recipe%2520List.html">Recipe List</a> and <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Cookbook.html">Cookbook</a> info, and individual items and ingredients. <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Bookmarks.html">Bookmarks</a> of mostly food related content.</p><p>Browse the <a class="tc-tiddlylink tc-tiddlylink-resolves" href="Custom%2520Index%2520Pages.html">Custom Index Pages</a> »</p></div>
 </div>
-<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-list" data-tags="list" data-tiddler-title="Journal List" role="article"><div class="tc-tiddler-title"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-expanded="false" aria-label="info" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Finfo" title="Show information for this tiddler"><svg class="tc-image-info-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd" transform="translate(.05)"><path d="M64 128c35.346 0 64-28.654 64-64 0-35.346-28.654-64-64-64C28.654 0 0 28.654 0 64c0 35.346 28.654 64 64 64zm0-16c26.51 0 48-21.49 48-48S90.51 16 64 16 16 37.49 16 64s21.49 48 48 48z"></path><circle cx="64" cy="32" r="8"></circle><rect height="56" rx="8" width="16" x="56" y="48"></rect></g></svg></button></span><span class=" tc-reveal" hidden="true"></span><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"><svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M95.627 10.059l-5.656 5.657 11.313 11.313 5.657-5.656-11.314-11.314zm5.657-5.657l1.966-1.966c3.123-3.122 8.194-3.129 11.319-.005 3.117 3.118 3.122 8.192-.005 11.32l-1.966 1.965-11.314-11.314zm-16.97 16.97l-60.25 60.25a8.12 8.12 0 00-.322.342c-.1.087-.198.179-.295.275-5.735 5.735-10.702 22.016-10.702 22.016s16.405-5.09 22.016-10.702c.095-.096.186-.193.272-.292a8.12 8.12 0 00.345-.325l60.25-60.25-11.314-11.313zM35.171 124.19c6.788-.577 13.898-2.272 23.689-5.348 1.825-.573 3.57-1.136 6.336-2.04 16-5.226 21.877-6.807 28.745-7.146 8.358-.413 13.854 2.13 17.58 8.699a4 4 0 006.959-3.946c-5.334-9.406-13.745-13.296-24.933-12.744-7.875.39-14.057 2.052-30.835 7.533-2.739.894-4.46 1.45-6.25 2.012-19.46 6.112-30.77 7.072-39.597 1.747a4 4 0 10-4.132 6.85c6.333 3.82 13.754 5.12 22.438 4.383z"></path></g></svg></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"><svg class="tc-image-permalink-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M80.483 48l-7.387 32h-25.58l7.388-32h25.58zm3.694-16l5.624-24.358c.993-4.303 5.29-6.996 9.596-6.002 4.296.992 6.988 5.293 5.994 9.602L100.598 32h3.403c4.41 0 7.999 3.582 7.999 8 0 4.41-3.581 8-8 8h-7.096l-7.387 32H104c4.41 0 7.999 3.582 7.999 8 0 4.41-3.581 8-8 8H85.824l-5.624 24.358c-.993 4.303-5.29 6.996-9.596 6.002-4.296-.992-6.988-5.293-5.994-9.602L69.402 96h-25.58L38.2 120.358c-.993 4.303-5.29 6.996-9.596 6.002-4.296-.992-6.988-5.293-5.994-9.602L27.402 96h-3.403C19.59 96 16 92.418 16 88c0-4.41 3.581-8 8-8h7.096l7.387-32H24C19.59 48 16 44.418 16 40c0-4.41 3.581-8 8-8h18.177l5.624-24.358c.993-4.303 5.29-6.996 9.596-6.002 4.296.992 6.988 5.293 5.994 9.602L58.598 32h25.58z" fill-rule="evenodd"></path></svg></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button></span><span><h2 class="tc-title">Journal List</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Boris%2520Mann.html">Boris Mann</a> 25th November 2022 at 7:18am</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="list"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="fill:#3F3B3B;color:#3F3B3B;">list</span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p>
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists  tc-tagged-list" data-tags="list" data-tiddler-title="Journal List" role="article"><div class="tc-tiddler-title tc-clearfix"><div class="tc-titlebar"><span class="tc-tiddler-controls"><span class=" tc-reveal"><button aria-expanded="false" aria-label="info" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Finfo" title="Show information for this tiddler"><svg class="tc-image-info-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd" transform="translate(.05)"><path d="M64 128c35.346 0 64-28.654 64-64 0-35.346-28.654-64-64-64C28.654 0 0 28.654 0 64c0 35.346 28.654 64 64 64zm0-16c26.51 0 48-21.49 48-48S90.51 16 64 16 16 37.49 16 64s21.49 48 48 48z"></path><circle cx="64" cy="32" r="8"></circle><rect height="56" rx="8" width="16" x="56" y="48"></rect></g></svg></button></span><span class=" tc-reveal" hidden="true"></span><button aria-label="Edit this tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"><svg class="tc-image-edit-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M95.627 10.059l-5.656 5.657 11.313 11.313 5.657-5.656-11.314-11.314zm5.657-5.657l1.966-1.966c3.123-3.122 8.194-3.129 11.319-.005 3.117 3.118 3.122 8.192-.005 11.32l-1.966 1.965-11.314-11.314zm-16.97 16.97l-60.25 60.25a8.12 8.12 0 00-.322.342c-.1.087-.198.179-.295.275-5.735 5.735-10.702 22.016-10.702 22.016s16.405-5.09 22.016-10.702c.095-.096.186-.193.272-.292a8.12 8.12 0 00.345-.325l60.25-60.25-11.314-11.313zM35.171 124.19c6.788-.577 13.898-2.272 23.689-5.348 1.825-.573 3.57-1.136 6.336-2.04 16-5.226 21.877-6.807 28.745-7.146 8.358-.413 13.854 2.13 17.58 8.699a4 4 0 006.959-3.946c-5.334-9.406-13.745-13.296-24.933-12.744-7.875.39-14.057 2.052-30.835 7.533-2.739.894-4.46 1.45-6.25 2.012-19.46 6.112-30.77 7.072-39.597 1.747a4 4 0 10-4.132 6.85c6.333 3.82 13.754 5.12 22.438 4.383z"></path></g></svg></button><button aria-label="permalink" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fpermalink" title="Set browser address bar to a direct link to this tiddler"><svg class="tc-image-permalink-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M80.483 48l-7.387 32h-25.58l7.388-32h25.58zm3.694-16l5.624-24.358c.993-4.303 5.29-6.996 9.596-6.002 4.296.992 6.988 5.293 5.994 9.602L100.598 32h3.403c4.41 0 7.999 3.582 7.999 8 0 4.41-3.581 8-8 8h-7.096l-7.387 32H104c4.41 0 7.999 3.582 7.999 8 0 4.41-3.581 8-8 8H85.824l-5.624 24.358c-.993 4.303-5.29 6.996-9.596 6.002-4.296-.992-6.988-5.293-5.994-9.602L69.402 96h-25.58L38.2 120.358c-.993 4.303-5.29 6.996-9.596 6.002-4.296-.992-6.988-5.293-5.994-9.602L27.402 96h-3.403C19.59 96 16 92.418 16 88c0-4.41 3.581-8 8-8h7.096l7.387-32H24C19.59 48 16 44.418 16 40c0-4.41 3.581-8 8-8h18.177l5.624-24.358c.993-4.303 5.29-6.996 9.596-6.002 4.296.992 6.988 5.293 5.994 9.602L58.598 32h25.58z" fill-rule="evenodd"></path></svg></button><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"><svg class="tc-image-close-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M65.086 75.41l-50.113 50.113c-3.121 3.121-8.192 3.126-11.316.002-3.118-3.118-3.123-8.19.002-11.316l50.114-50.114L3.659 13.982C.538 10.86.533 5.79 3.657 2.666c3.118-3.118 8.19-3.123 11.316.002l50.113 50.114L115.2 2.668c3.121-3.121 8.192-3.126 11.316-.002 3.118 3.118 3.123 8.19-.002 11.316L76.4 64.095l50.114 50.114c3.121 3.121 3.126 8.192.002 11.316-3.118 3.118-8.19 3.123-11.316-.002L65.086 75.409z" fill-rule="evenodd"></path></svg></button></span><span><h2 class="tc-title">Journal List</h2></span></div><div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div></div><div class="tc-reveal"></div><div class=" tc-reveal"><div class="tc-subtitle tc-clearfix"><a class="tc-tiddlylink tc-tiddlylink-resolves" href="Boris%2520Mann.html">Boris Mann</a>25th November 2022 at 7:18am</div></div><div class=" tc-reveal"><div class="tc-tags-wrapper"><span class="tc-tag-list-item" data-tag-title="list"><span aria-expanded="false" class="tc-tag-label tc-btn-invisible" draggable="true" style="fill:#3F3B3B;color:#3F3B3B;"><span class="tc-tag-missing">list</span></span><span class="tc-drop-down tc-reveal" hidden="true"></span></span></div></div><div class="tc-tiddler-body tc-reveal"><p>
+<li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="June%252024th%252C%25202025.html">June 24th, 2025</a></li>
+
+<li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="June%25208th%252C%25202024.html">June 8th, 2024</a></li>
+
+<li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="June%25205th%252C%25202024.html">June 5th, 2024</a></li>
+
+<li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="April%252029th%252C%25202024.html">April 29th, 2024</a></li>
+
+<li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="April%252030th%252C%25202024.html">April 30th, 2024</a></li>
+
+<li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="April%252028th%252C%25202024.html">April 28th, 2024</a></li>
+
 <li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="April%252026th%252C%25202024.html">April 26th, 2024</a></li>
 
 <li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="April%252027th%252C%25202024.html">April 27th, 2024</a></li>
@@ -2888,18 +3040,6 @@ float:right;
 <li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="February%25201st%252C%25202024.html">February 1st, 2024</a></li>
 
 <li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="January%252031st%252C%25202024.html">January 31st, 2024</a></li>
-
-<li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="January%252028th%252C%25202024.html">January 28th, 2024</a></li>
-
-<li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="January%252027th%252C%25202024.html">January 27th, 2024</a></li>
-
-<li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="January%252023rd%252C%25202024.html">January 23rd, 2024</a></li>
-
-<li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="January%252022nd%252C%25202024.html">January 22nd, 2024</a></li>
-
-<li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="January%252020th%252C%25202024.html">January 20th, 2024</a></li>
-
-<li><a class="tc-tiddlylink tc-tiddlylink-resolves" href="January%252017th%252C%25202024.html">January 17th, 2024</a></li>
 </p></div>
 </div>
 <section class="story-frontdrop"></section></section><div class="tc-alerts"></div><p><div class="tc-drafts-list tc-reveal"></div></p><p><span class=" tc-reveal">
@@ -2923,7 +3063,7 @@ float:right;
 
     </div>
     <div class="right">
-      <div class="tc-page-controls"><button aria-label="home" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fhome" title="Open the default tiddlers"><svg class="tc-image-home-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M112.985 119.502c.01-.165.015-.331.015-.499V67.568c3.137 2.948 8.076 2.884 11.134-.174a7.999 7.999 0 00-.002-11.316L70.396 2.343A7.978 7.978 0 0064.734 0a7.957 7.957 0 00-5.656 2.343L33 28.42V8.007C33 3.585 29.41 0 25 0c-4.418 0-8 3.59-8 8.007V44.42L5.342 56.078c-3.125 3.125-3.12 8.198-.002 11.316a7.999 7.999 0 0011.316-.003l.344-.343v52.945a8.11 8.11 0 000 .007c0 4.418 3.588 8 8 8h80c4.419 0 8-3.59 8-8a8.11 8.11 0 00-.015-.498zM97 112V51.574L64.737 19.31 33 51.048V112h64z" fill-rule="evenodd"></path></svg></button><button aria-label="new tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fnew-tiddler" title="Create a new tiddler"><svg class="tc-image-new-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 72H8.007C3.591 72 0 68.418 0 64c0-4.41 3.585-8 8.007-8H56V8.007C56 3.591 59.582 0 64 0c4.41 0 8 3.585 8 8.007V56h47.993c4.416 0 8.007 3.582 8.007 8 0 4.41-3.585 8-8.007 8H72v47.993c0 4.416-3.582 8.007-8 8.007-4.41 0-8-3.585-8-8.007V72z" fill-rule="evenodd"></path></svg></button><button aria-label="new journal" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fnew-journal" title="Create a new journal tiddler"><svg class="tc-image-new-journal-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M102.545 112.818v11.818c0 1.306 1.086 2.364 2.425 2.364h6.06c1.34 0 2.425-1.058 2.425-2.364v-11.818h12.12c1.34 0 2.425-1.058 2.425-2.363v-5.91c0-1.305-1.085-2.363-2.424-2.363h-12.121V90.364c0-1.306-1.086-2.364-2.425-2.364h-6.06c-1.34 0-2.425 1.058-2.425 2.364v11.818h-12.12c-1.34 0-2.425 1.058-2.425 2.363v5.91c0 1.305 1.085 2.363 2.424 2.363h12.121zM60.016 4.965c-4.781-2.76-10.897-1.118-13.656 3.66L5.553 79.305A9.993 9.993 0 009.21 92.963l51.04 29.468c4.78 2.76 10.897 1.118 13.655-3.66l40.808-70.681a9.993 9.993 0 00-3.658-13.656L60.016 4.965zm-3.567 27.963a6 6 0 106-10.393 6 6 0 00-6 10.393zm31.697 17.928a6 6 0 106-10.392 6 6 0 00-6 10.392z"></path><text class="tc-fill-background" font-family="Helvetica" font-size="47.172" font-weight="bold" transform="rotate(30 25.742 95.82)"><tspan text-anchor="middle" x="42" y="77.485">27</tspan></text></g></svg></button><button aria-label="save changes" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fsave-wiki" title="Save changes"><span class="tc-dirty-indicator"><svg class="tc-image-save-button-dynamic tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+      <div class="tc-page-controls"><button aria-label="home" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fhome" title="Open the default tiddlers"><svg class="tc-image-home-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M112.985 119.502c.01-.165.015-.331.015-.499V67.568c3.137 2.948 8.076 2.884 11.134-.174a7.999 7.999 0 00-.002-11.316L70.396 2.343A7.978 7.978 0 0064.734 0a7.957 7.957 0 00-5.656 2.343L33 28.42V8.007C33 3.585 29.41 0 25 0c-4.418 0-8 3.59-8 8.007V44.42L5.342 56.078c-3.125 3.125-3.12 8.198-.002 11.316a7.999 7.999 0 0011.316-.003l.344-.343v52.945a8.11 8.11 0 000 .007c0 4.418 3.588 8 8 8h80c4.419 0 8-3.59 8-8a8.11 8.11 0 00-.015-.498zM97 112V51.574L64.737 19.31 33 51.048V112h64z" fill-rule="evenodd"></path></svg></button><button aria-label="new tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fnew-tiddler" title="Create a new tiddler"><svg class="tc-image-new-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 72H8.007C3.591 72 0 68.418 0 64c0-4.41 3.585-8 8.007-8H56V8.007C56 3.591 59.582 0 64 0c4.41 0 8 3.585 8 8.007V56h47.993c4.416 0 8.007 3.582 8.007 8 0 4.41-3.585 8-8.007 8H72v47.993c0 4.416-3.582 8.007-8 8.007-4.41 0-8-3.585-8-8.007V72z" fill-rule="evenodd"></path></svg></button><button aria-label="new journal" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fnew-journal" title="Create a new journal tiddler"><svg class="tc-image-new-journal-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M102.545 112.818v11.818c0 1.306 1.086 2.364 2.425 2.364h6.06c1.34 0 2.425-1.058 2.425-2.364v-11.818h12.12c1.34 0 2.425-1.058 2.425-2.363v-5.91c0-1.305-1.085-2.363-2.424-2.363h-12.121V90.364c0-1.306-1.086-2.364-2.425-2.364h-6.06c-1.34 0-2.425 1.058-2.425 2.364v11.818h-12.12c-1.34 0-2.425 1.058-2.425 2.363v5.91c0 1.305 1.085 2.363 2.424 2.363h12.121zM60.016 4.965c-4.781-2.76-10.897-1.118-13.656 3.66L5.553 79.305A9.993 9.993 0 009.21 92.963l51.04 29.468c4.78 2.76 10.897 1.118 13.655-3.66l40.808-70.681a9.993 9.993 0 00-3.658-13.656L60.016 4.965zm-3.567 27.963a6 6 0 106-10.393 6 6 0 00-6 10.393zm31.697 17.928a6 6 0 106-10.392 6 6 0 00-6 10.392z"></path><text class="tc-fill-background" font-family="Helvetica" font-size="47.172" font-weight="bold" transform="rotate(30 25.742 95.82)"><tspan text-anchor="middle" x="42" y="77.485">25</tspan></text></g></svg></button><button aria-label="save changes" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fsave-wiki" title="Save changes"><span class="tc-dirty-indicator"><svg class="tc-image-save-button-dynamic tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
 <g class="tc-image-save-button-dynamic-clean">
 <path d="M120.783 34.33c4.641 8.862 7.266 18.948 7.266 29.646 0 35.347-28.653 64-64 64-35.346 0-64-28.653-64-64 0-35.346 28.654-64 64-64 18.808 0 35.72 8.113 47.43 21.03l2.68-2.68c3.13-3.13 8.197-3.132 11.321-.008 3.118 3.118 3.121 8.193-.007 11.32l-4.69 4.691zm-12.058 12.058a47.876 47.876 0 013.324 17.588c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48c14.39 0 27.3 6.332 36.098 16.362L58.941 73.544 41.976 56.578c-3.127-3.127-8.201-3.123-11.32-.005-3.123 3.124-3.119 8.194.006 11.319l22.617 22.617a7.992 7.992 0 005.659 2.347c2.05 0 4.101-.783 5.667-2.349l44.12-44.12z" fill-rule="evenodd"></path>
 </g>
@@ -2968,7 +3108,7 @@ float:right;
 
       </div>
       <div class="right">
-        <div class="tc-page-controls"><button aria-label="home" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fhome" title="Open the default tiddlers"><svg class="tc-image-home-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M112.985 119.502c.01-.165.015-.331.015-.499V67.568c3.137 2.948 8.076 2.884 11.134-.174a7.999 7.999 0 00-.002-11.316L70.396 2.343A7.978 7.978 0 0064.734 0a7.957 7.957 0 00-5.656 2.343L33 28.42V8.007C33 3.585 29.41 0 25 0c-4.418 0-8 3.59-8 8.007V44.42L5.342 56.078c-3.125 3.125-3.12 8.198-.002 11.316a7.999 7.999 0 0011.316-.003l.344-.343v52.945a8.11 8.11 0 000 .007c0 4.418 3.588 8 8 8h80c4.419 0 8-3.59 8-8a8.11 8.11 0 00-.015-.498zM97 112V51.574L64.737 19.31 33 51.048V112h64z" fill-rule="evenodd"></path></svg></button><button aria-label="new tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fnew-tiddler" title="Create a new tiddler"><svg class="tc-image-new-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 72H8.007C3.591 72 0 68.418 0 64c0-4.41 3.585-8 8.007-8H56V8.007C56 3.591 59.582 0 64 0c4.41 0 8 3.585 8 8.007V56h47.993c4.416 0 8.007 3.582 8.007 8 0 4.41-3.585 8-8.007 8H72v47.993c0 4.416-3.582 8.007-8 8.007-4.41 0-8-3.585-8-8.007V72z" fill-rule="evenodd"></path></svg></button><button aria-label="new journal" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fnew-journal" title="Create a new journal tiddler"><svg class="tc-image-new-journal-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M102.545 112.818v11.818c0 1.306 1.086 2.364 2.425 2.364h6.06c1.34 0 2.425-1.058 2.425-2.364v-11.818h12.12c1.34 0 2.425-1.058 2.425-2.363v-5.91c0-1.305-1.085-2.363-2.424-2.363h-12.121V90.364c0-1.306-1.086-2.364-2.425-2.364h-6.06c-1.34 0-2.425 1.058-2.425 2.364v11.818h-12.12c-1.34 0-2.425 1.058-2.425 2.363v5.91c0 1.305 1.085 2.363 2.424 2.363h12.121zM60.016 4.965c-4.781-2.76-10.897-1.118-13.656 3.66L5.553 79.305A9.993 9.993 0 009.21 92.963l51.04 29.468c4.78 2.76 10.897 1.118 13.655-3.66l40.808-70.681a9.993 9.993 0 00-3.658-13.656L60.016 4.965zm-3.567 27.963a6 6 0 106-10.393 6 6 0 00-6 10.393zm31.697 17.928a6 6 0 106-10.392 6 6 0 00-6 10.392z"></path><text class="tc-fill-background" font-family="Helvetica" font-size="47.172" font-weight="bold" transform="rotate(30 25.742 95.82)"><tspan text-anchor="middle" x="42" y="77.485">27</tspan></text></g></svg></button><button aria-label="save changes" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fsave-wiki" title="Save changes"><span class="tc-dirty-indicator"><svg class="tc-image-save-button-dynamic tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
+        <div class="tc-page-controls"><button aria-label="home" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fhome" title="Open the default tiddlers"><svg class="tc-image-home-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M112.985 119.502c.01-.165.015-.331.015-.499V67.568c3.137 2.948 8.076 2.884 11.134-.174a7.999 7.999 0 00-.002-11.316L70.396 2.343A7.978 7.978 0 0064.734 0a7.957 7.957 0 00-5.656 2.343L33 28.42V8.007C33 3.585 29.41 0 25 0c-4.418 0-8 3.59-8 8.007V44.42L5.342 56.078c-3.125 3.125-3.12 8.198-.002 11.316a7.999 7.999 0 0011.316-.003l.344-.343v52.945a8.11 8.11 0 000 .007c0 4.418 3.588 8 8 8h80c4.419 0 8-3.59 8-8a8.11 8.11 0 00-.015-.498zM97 112V51.574L64.737 19.31 33 51.048V112h64z" fill-rule="evenodd"></path></svg></button><button aria-label="new tiddler" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fnew-tiddler" title="Create a new tiddler"><svg class="tc-image-new-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><path d="M56 72H8.007C3.591 72 0 68.418 0 64c0-4.41 3.585-8 8.007-8H56V8.007C56 3.591 59.582 0 64 0c4.41 0 8 3.585 8 8.007V56h47.993c4.416 0 8.007 3.582 8.007 8 0 4.41-3.585 8-8.007 8H72v47.993c0 4.416-3.582 8.007-8 8.007-4.41 0-8-3.585-8-8.007V72z" fill-rule="evenodd"></path></svg></button><button aria-label="new journal" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fnew-journal" title="Create a new journal tiddler"><svg class="tc-image-new-journal-button tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt"><g fill-rule="evenodd"><path d="M102.545 112.818v11.818c0 1.306 1.086 2.364 2.425 2.364h6.06c1.34 0 2.425-1.058 2.425-2.364v-11.818h12.12c1.34 0 2.425-1.058 2.425-2.363v-5.91c0-1.305-1.085-2.363-2.424-2.363h-12.121V90.364c0-1.306-1.086-2.364-2.425-2.364h-6.06c-1.34 0-2.425 1.058-2.425 2.364v11.818h-12.12c-1.34 0-2.425 1.058-2.425 2.363v5.91c0 1.305 1.085 2.363 2.424 2.363h12.121zM60.016 4.965c-4.781-2.76-10.897-1.118-13.656 3.66L5.553 79.305A9.993 9.993 0 009.21 92.963l51.04 29.468c4.78 2.76 10.897 1.118 13.655-3.66l40.808-70.681a9.993 9.993 0 00-3.658-13.656L60.016 4.965zm-3.567 27.963a6 6 0 106-10.393 6 6 0 00-6 10.393zm31.697 17.928a6 6 0 106-10.392 6 6 0 00-6 10.392z"></path><text class="tc-fill-background" font-family="Helvetica" font-size="47.172" font-weight="bold" transform="rotate(30 25.742 95.82)"><tspan text-anchor="middle" x="42" y="77.485">25</tspan></text></g></svg></button><button aria-label="save changes" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fsave-wiki" title="Save changes"><span class="tc-dirty-indicator"><svg class="tc-image-save-button-dynamic tc-image-button" height="22pt" viewBox="0 0 128 128" width="22pt">
 <g class="tc-image-save-button-dynamic-clean">
 <path d="M120.783 34.33c4.641 8.862 7.266 18.948 7.266 29.646 0 35.347-28.653 64-64 64-35.346 0-64-28.653-64-64 0-35.346 28.654-64 64-64 18.808 0 35.72 8.113 47.43 21.03l2.68-2.68c3.13-3.13 8.197-3.132 11.321-.008 3.118 3.118 3.121 8.193-.007 11.32l-4.69 4.691zm-12.058 12.058a47.876 47.876 0 013.324 17.588c0 26.51-21.49 48-48 48s-48-21.49-48-48 21.49-48 48-48c14.39 0 27.3 6.332 36.098 16.362L58.941 73.544 41.976 56.578c-3.127-3.127-8.201-3.123-11.32-.005-3.123 3.124-3.119 8.194.006 11.319l22.617 22.617a7.992 7.992 0 005.659 2.347c2.05 0 4.101-.783 5.667-2.349l44.12-44.12z" fill-rule="evenodd"></path>
 </g>
